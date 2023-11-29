@@ -1,3 +1,4 @@
+# Place in ~/.bashrc
 # Enable the subsequent settings only in interactive sessions
 case $- in
   *i*) ;;
@@ -5,7 +6,7 @@ case $- in
 esac
 
 # Path to your oh-my-bash installation.
-export OSH='/home/lucas/.oh-my-bash'
+export OSH="/home/$USER/.oh-my-bash"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-bash is loaded.
