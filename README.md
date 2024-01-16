@@ -1,2 +1,3 @@
-# oh-my-bash-config
-My oh-my-bash config file
+# Config Scripts
+
+Various config scripts/files for software that uses them
