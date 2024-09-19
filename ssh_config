@@ -1,0 +1,8 @@
+# Place in ~/.ssh/config
+
+# Deep Bayou
+Host db
+   HostName db1.hpc.lsu.edu
+   User lts
+   PreferredAuthentications publickey
+   IdentityFile ~/.ssh/id_rsa
