@@ -5,6 +5,13 @@ Host db1
    PreferredAuthentications publickey
    IdentityFile ~/.ssh/id_rsa
 
+# Queen Bee
+Host qb
+   HostName qb.loni.org
+   User lts
+   PreferredAuthentications publickey
+   IdentityFile ~/.ssh/id_rsa
+
 # CCT Machines
 Host mel5
     hostname melete05.cct.lsu.edu
