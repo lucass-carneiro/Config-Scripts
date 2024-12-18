@@ -9,8 +9,8 @@ Host db1
 Host mike
    HostName mike.hpc.lsu.edu
    User lts
-   #PreferredAuthentications publickey
-   #IdentityFile ~/.ssh/id_rsa
+   PreferredAuthentications publickey
+   IdentityFile ~/.ssh/id_rsa
 
 # LONI Machines
 Host qb
