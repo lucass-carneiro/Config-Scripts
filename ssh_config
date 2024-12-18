@@ -1,11 +1,18 @@
-# Deep Bayou
+# LSU HPC machines
 Host db1
    HostName db1.hpc.lsu.edu
    User lts
    PreferredAuthentications publickey
    IdentityFile ~/.ssh/id_rsa
 
-# Queen Bee
+
+Host mike
+   HostName mike.hpc.lsu.edu
+   User lts
+   #PreferredAuthentications publickey
+   #IdentityFile ~/.ssh/id_rsa
+
+# LONI Machines
 Host qb
    HostName qb.loni.org
    User lts
