@@ -147,5 +147,10 @@ export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30
 # shopt Options
 shopt -u autocd # Turns off autocd
 
+# Export correct term when using SSH
+alias ssh='TERM=xterm-256color ssh -t'
+
 # env
+export VCPKG_ROOT=$HOME/vcpkg
+export PATH=$PATH:$VCPKG_ROOT
 export PATH=$PATH:~/.local/bin/
