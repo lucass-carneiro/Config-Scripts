@@ -19,6 +19,12 @@ Host qb
    PreferredAuthentications publickey
    IdentityFile ~/.ssh/id_rsa
 
+Host qbd
+   HostName qbd.loni.org
+   User lts
+   PreferredAuthentications publickey
+   IdentityFile ~/.ssh/id_rsa
+   
 # CCT Machines
 Host mel5
     hostname melete05.cct.lsu.edu
