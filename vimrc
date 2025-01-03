@@ -1,4 +1,4 @@
-" Place in .config/nvim/init.vim
+" Place in ~/.vimrc
 
 set nocompatible            " disable compatibility to old-time vi
 set showmatch               " show matching 
@@ -24,7 +24,7 @@ set ttyfast                 " Speed up scrolling in Vim
 " set backupdir=~/.cache/vim " Directory to store backup files.
 "
 
-" Line motions line in VS Code
+" Line motions like in VS Code
 nnoremap <silent> <M-Up>    :<C-U>exec "exec 'norm m`' \| move -" . (1+v:count1)<CR>``
 nnoremap <silent> <M-Down>  :<C-U>exec "exec 'norm m`' \| move +" . (0+v:count1)<CR>``
 
@@ -33,3 +33,13 @@ inoremap <silent> <M-Down>  <C-O>m`<C-O>:move +1<CR><C-O>``
 
 vnoremap <silent> <M-Up>    :<C-U>exec "'<,'>move '<-" . (1+v:count1)<CR>gv
 vnoremap <silent> <M-Down>  :<C-U>exec "'<,'>move '>+" . (0+v:count1)<CR>gv
+
+" Vimdiff config
+if &diff
+    syntax off
+    highlight DiffAdd cterm=none ctermfg=Black ctermbg=Green gui=none guifg=Black guibg=Green 
+    highlight DiffChange cterm=none ctermfg=Black ctermbg=Blue gui=none guifg=Black guibg=Blue 
+    highlight DiffDelete cterm=none ctermfg=Black ctermbg=Red gui=none guifg=Black guibg=Red 
+    highlight DiffText cterm=none ctermfg=Black ctermbg=Blue gui=none guifg=Black guibg=Blue
+endif
+
