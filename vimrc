@@ -1,4 +1,4 @@
-" Place in ~/.vimrc
+" Place in .config/nvim/init.vim
 
 set nocompatible            " disable compatibility to old-time vi
 set showmatch               " show matching 
@@ -24,8 +24,6 @@ set ttyfast                 " Speed up scrolling in Vim
 " set backupdir=~/.cache/vim " Directory to store backup files.
 "
 
-set laststatus=2 " Status bar
-
 " Line motions like in VS Code
 nnoremap <silent> <M-Up>    :<C-U>exec "exec 'norm m`' \| move -" . (1+v:count1)<CR>``
 nnoremap <silent> <M-Down>  :<C-U>exec "exec 'norm m`' \| move +" . (0+v:count1)<CR>``
@@ -44,4 +42,21 @@ if &diff
     highlight DiffDelete cterm=none ctermfg=Black ctermbg=Red gui=none guifg=Black guibg=Red 
     highlight DiffText cterm=none ctermfg=Black ctermbg=Blue gui=none guifg=Black guibg=Blue
 endif
+
+" Install vim-plug if not found
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+endif
+
+" Run PlugInstall if there are missing plugins
+autocmd VimEnter *
+  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \|   PlugInstall --sync | q
+  \| endif
+
+" List your plugins here
+call plug#begin()
+
+call plug#end()
 
