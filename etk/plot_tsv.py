@@ -47,8 +47,8 @@ def do_twocol(args):
     
     if args["--show"]:
         plt.show()
-
-    plt.savefig(args["--output-file"])
+    else:
+        plt.savefig(args["--output-file"])
 
 def main(args):
     if args["twocol"]:
