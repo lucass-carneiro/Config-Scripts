@@ -154,3 +154,5 @@ alias ssh='TERM=xterm-256color ssh -t'
 export VCPKG_ROOT=$HOME/vcpkg
 export PATH=$PATH:$VCPKG_ROOT
 export PATH=$PATH:~/.local/bin/
+
+alias rm='rm -rd'
