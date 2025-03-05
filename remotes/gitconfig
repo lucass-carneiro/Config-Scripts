@@ -1,6 +1,6 @@
 # Place in ~/.gitconfig
 [user]
-	email = lucas.t.s.carneiro@gmail.com
+    email = lucas.t.s.carneiro@gmail.com
     name = Lucas Timotheo Sanches
 
 [diff]
