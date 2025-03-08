@@ -1,3 +1,5 @@
+# Place in ~/.ssh/config
+
 # LSU HPC machines
 Host db1
    HostName db1.hpc.lsu.edu
