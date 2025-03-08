@@ -5,46 +5,32 @@ Host db1
    HostName db1.hpc.lsu.edu
    User lts
    PreferredAuthentications publickey
-   IdentityFile ~/.ssh/id_rsa
-
 
 Host mike
    HostName mike.hpc.lsu.edu
    User lts
    PreferredAuthentications publickey
-   IdentityFile ~/.ssh/id_rsa
 
 # LONI Machines
-Host qb
-   HostName qb.loni.org
-   User lts
-   PreferredAuthentications publickey
-   IdentityFile ~/.ssh/id_rsa
-
 Host qbd
    HostName qbd.loni.org
    User lts
    PreferredAuthentications publickey
-   IdentityFile ~/.ssh/id_rsa
    
 # CCT Machines
-Host mel5
-    hostname melete05.cct.lsu.edu
-    user lsanches
-    port 2526
-    proxycommand ssh -oStrictHostKeyChecking=no bounce nc %h %p 2> /dev/null
-
 Host bounce
     HostName bounce.cct.lsu.edu
     user lsanches
     port 2525
-    HostKeyAlgorithms +ssh-rsa
-    PubkeyAcceptedKeyTypes +ssh-rsa
-    stricthostkeychecking no
-    userknownhostsfile /dev/null
 
 Host vault
     HostName vault.cct.lsu.edu
     user lsanches
-    HostKeyAlgorithms +ssh-rsa
-    PubkeyAcceptedKeyTypes +ssh-rsa
+    port 2525
+    ProxyJump bounce
+
+Host mel5
+    hostname melete05.cct.lsu.edu
+    User lsanches
+    Port 2526
+    ProxyJump bounce
