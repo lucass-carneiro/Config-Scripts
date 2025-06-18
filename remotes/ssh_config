@@ -22,6 +22,7 @@ Host bounce
     HostName bounce.cct.lsu.edu
     user lsanches
     port 22
+    ProxyJump mike
 
 Host vault
     HostName vault.cct.lsu.edu
