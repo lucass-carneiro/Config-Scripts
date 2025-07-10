@@ -35,3 +35,14 @@ Host mel5
     User lsanches
     Port 2526
     ProxyJump bounce
+
+# Argonne machines
+
+Host aurora
+    hostname aurora.alcf.anl.gov
+    User lsanches
+
+Host polaris
+    hostname polaris.alcf.anl.gov
+    User lsanches
+
