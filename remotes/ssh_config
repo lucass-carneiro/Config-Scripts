@@ -46,3 +46,12 @@ Host polaris
     hostname polaris.alcf.anl.gov
     User lsanches
 
+# Oak Ridge machines
+
+Host odo
+    hostname odo.olcf.ornl.gov
+    user lsanches
+
+Host perlmutter
+    hostname perlmutter.nersc.gov
+    user lsanches
