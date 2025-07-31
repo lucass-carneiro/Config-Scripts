@@ -36,6 +36,12 @@ Host mel5
     Port 2526
     ProxyJump bounce
 
+# TACC machines
+
+Host frontera
+    hostname frontera.tacc.utexas.edu
+    User lsanches
+
 # Argonne machines
 
 Host aurora
@@ -48,9 +54,17 @@ Host polaris
 
 # Oak Ridge machines
 
+Host frontier
+    hostname frontier.olcf.ornl.gov
+    user lsanches
+    PreferredAuthentications keyboard-interactive,password
+    ControlMaster no
+
 Host odo
     hostname odo.olcf.ornl.gov
     user lsanches
+    PreferredAuthentications keyboard-interactive,password
+    ControlMaster no
 
 Host perlmutter
     hostname perlmutter.nersc.gov
