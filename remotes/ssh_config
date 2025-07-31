@@ -41,6 +41,7 @@ Host mel5
 Host frontera
     hostname frontera.tacc.utexas.edu
     User lsanches
+    PreferredAuthentications keyboard-interactive
 
 # Argonne machines
 
