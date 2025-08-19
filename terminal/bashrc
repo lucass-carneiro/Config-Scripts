@@ -151,3 +151,4 @@ shopt -u autocd # Turns off autocd
 alias ssh='TERM=xterm-256color ssh -t'
 
 alias rm='rm -rd'
+alias rsync='rsync -hiva --progress'
