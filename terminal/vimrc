@@ -60,3 +60,7 @@ call plug#begin()
 
 call plug#end()
 
+autocmd BufReadPost *
+     \ if line("'\"") > 0 && line("'\"") <= line("$") |
+     \   exe "normal! g`\"" |
+     \ endif
