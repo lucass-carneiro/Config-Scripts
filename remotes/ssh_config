@@ -36,10 +36,14 @@ Host mel5
     Port 2526
     ProxyJump bounce
 
+Host rostam
+    hostname rostam.cct.lsu.edu
+    User lsanches
+
 # TACC machines
 
 Host frontera
-    hostname frontera.tacc.utexas.edu
+    hostname login1.frontera.tacc.utexas.edu
     User lsanches
     PreferredAuthentications keyboard-interactive
 
@@ -70,3 +74,13 @@ Host odo
 Host perlmutter
     hostname perlmutter.nersc.gov
     user lsanches
+
+# MareNostrum
+
+Host mare_transfer
+    hostname transfer1.bsc.es
+    user lsu876453
+
+Host mare
+    hostname glogin1.bsc.es
+    user lsu876453
