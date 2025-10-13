@@ -1,5 +1,5 @@
 #! /bin/bash
-#SBATCH --job-name=headon-multipatch
+#SBATCH --job-name=bench_multipatch
 #SBATCH --time=3-00:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=10
@@ -22,7 +22,7 @@ set -x # Output commands
 set -e # Abort on errors
 
 module purge
-spack env activate cactus-cpu
+spack env activate hpctool
 
 cd ${CACTUS_SIMDIR}
 
@@ -70,7 +70,18 @@ mpiexec \
   -genvlist OMP_NUM_THREADS,OMP_PLACES,OMP_PROC_BIND \
   --bind-to numa \
   --map-by numa \
+  hpcrun  \
+  -e REALTIME \
+  -e CYCLES \
+  -e INSTRUCTIONS \
+  -tt \
   ${CACTUS_EXE} -L 3 ${PARFILE}
+
+echo "Running hpcstruct:"
+hpcstruct hpctoolkit-${CACTUS_EXE_NAME}-measurements-${SLURM_JOB_ID}
+
+echo "Running hpcprof:"
+hpcprof hpctoolkit-${CACTUS_EXE_NAME}-measurements-${SLURM_JOB_ID}
 
 echo "Stopping:"
 
