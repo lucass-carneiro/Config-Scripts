@@ -35,12 +35,17 @@ vnoremap <silent> <M-Up>    :<C-U>exec "'<,'>move '<-" . (1+v:count1)<CR>gv
 vnoremap <silent> <M-Down>  :<C-U>exec "'<,'>move '>+" . (0+v:count1)<CR>gv
 
 " Vimdiff config
+" This is based on Steve's torture color map
 if &diff
     syntax off
-    highlight DiffAdd cterm=none ctermfg=Black ctermbg=Green gui=none guifg=Black guibg=Green 
-    highlight DiffChange cterm=none ctermfg=Black ctermbg=Blue gui=none guifg=Black guibg=Blue 
-    highlight DiffDelete cterm=none ctermfg=Black ctermbg=Red gui=none guifg=Black guibg=Red 
-    highlight DiffText cterm=none ctermfg=Black ctermbg=Blue gui=none guifg=Black guibg=Blue
+    highlight DiffAdd guifg=white guibg=darkblue
+    highlight DiffAdd ctermfg=white ctermbg=darkblue
+    highlight DiffChange guifg=white guibg=darkred
+    highlight DiffChange ctermfg=white ctermbg=darkred
+    highlight DiffText guifg=white guibg=darkblue
+    highlight DiffText ctermfg=white ctermbg=darkblue
+    highlight DiffDelete guifg=white guibg=darkblue
+    highlight DiffDelete ctermfg=white ctermbg=darkblue
 endif
 
 " Install vim-plug if not found
