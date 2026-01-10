@@ -1,5 +1,9 @@
 # Place in ~/.ssh/config
 
+Host *
+  WarnWeakCrypto no          # I don't care about quantum
+  SetEnv TERM=xterm-256color # Fix terminal issues
+
 # LSU HPC machines
 Host db1
    HostName db1.hpc.lsu.edu
@@ -8,6 +12,11 @@ Host db1
 
 Host mike
    HostName mike.hpc.lsu.edu
+   User lts
+   PreferredAuthentications publickey
+
+Host smic
+   HostName smic.hpc.lsu.edu
    User lts
    PreferredAuthentications publickey
 

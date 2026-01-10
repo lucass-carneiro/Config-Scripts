@@ -6,10 +6,10 @@ set ignorecase              " case insensitive
 set mouse=v                 " middle-click paste with 
 set hlsearch                " highlight search 
 set incsearch               " incremental search
-set tabstop=4               " number of columns occupied by a tab 
-set softtabstop=4           " see multiple spaces as tabstops so <BS> does the right thing
+set tabstop=2               " number of columns occupied by a tab 
+set softtabstop=2           " see multiple spaces as tabstops so <BS> does the right thing
 set expandtab               " converts tabs to white space
-set shiftwidth=4            " width for autoindents
+set shiftwidth=2            " width for autoindents
 set autoindent              " indent a new line the same amount as the line just typed
 set number                  " add line numbers
 set wildmode=longest,list   " get bash-like tab completions
@@ -35,17 +35,27 @@ vnoremap <silent> <M-Up>    :<C-U>exec "'<,'>move '<-" . (1+v:count1)<CR>gv
 vnoremap <silent> <M-Down>  :<C-U>exec "'<,'>move '>+" . (0+v:count1)<CR>gv
 
 " Vimdiff config
-" This is based on Steve's torture color map
 if &diff
+    " Character by character diffs
+    set diffopt+=inline:char
+    
     syntax off
-    highlight DiffAdd guifg=white guibg=darkblue
-    highlight DiffAdd ctermfg=white ctermbg=darkblue
-    highlight DiffChange guifg=white guibg=darkred
-    highlight DiffChange ctermfg=white ctermbg=darkred
-    highlight DiffText guifg=white guibg=darkblue
-    highlight DiffText ctermfg=white ctermbg=darkblue
-    highlight DiffDelete guifg=white guibg=darkblue
-    highlight DiffDelete ctermfg=white ctermbg=darkblue
+    
+    " Additions
+    highlight DiffAdd ctermfg=black ctermbg=darkgreen
+    highlight DiffAdd   guifg=black   guibg=darkgreen
+    
+    " Deletions
+    highlight DiffDelete ctermfg=black ctermbg=darkred
+    highlight DiffDelete   guifg=black   guibg=darkred
+    
+    " The entire line containing a change
+    highlight DiffChange ctermfg=NONE ctermbg=NONE
+    highlight DiffChange   guifg=NONE   guibg=NONE
+   
+    " Specific changes within a DiffChange region
+    highlight DiffText ctermfg=black  ctermbg=cyan
+    highlight DiffText   guifg=black    guibg=cyan
 endif
 
 " Install vim-plug if not found
@@ -62,7 +72,8 @@ autocmd VimEnter *
 
 " List your plugins here
 call plug#begin()
-
+" Plug 'name/name'
+Plug 'jceb/vim-orgmode'
 call plug#end()
 
 autocmd BufReadPost *
