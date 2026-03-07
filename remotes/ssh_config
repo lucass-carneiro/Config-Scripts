@@ -93,3 +93,12 @@ Host mare_transfer
 Host mare
     hostname glogin1.bsc.es
     user lsu876453
+
+Host saturn
+    hostname saturn.perimeterinstitute.ca
+    user lsanches1
+
+Host symmetry
+    hostname symmetry
+    user lsanches1
+    ProxyJump saturn 
