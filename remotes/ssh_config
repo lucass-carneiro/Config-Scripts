@@ -94,11 +94,20 @@ Host mare
     hostname glogin1.bsc.es
     user lsu876453
 
+# Perimeter machines
+
 Host saturn
-    hostname saturn.perimeterinstitute.ca
+    hostname earth.perimeterinstitute.ca
     user lsanches1
 
 Host symmetry
     hostname symmetry
     user lsanches1
     ProxyJump saturn 
+
+# NCSA machines
+
+Host dtai
+    hostname dtai-login.delta.ncsa.illinois.edu
+    user ltimotheosanches
+
