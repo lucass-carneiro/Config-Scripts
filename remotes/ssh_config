@@ -29,6 +29,7 @@ Host qbd
 # CCT Machines
 Host bounce
     HostName bounce.cct.lsu.edu
+    StrictHostKeyChecking no
     user lsanches
     port 2525
 
@@ -109,5 +110,9 @@ Host symmetry
 
 Host dtai
     hostname dtai-login.delta.ncsa.illinois.edu
+    user ltimotheosanches
+
+Host delta
+    hostname login.delta.ncsa.illinois.edu
     user ltimotheosanches
 
